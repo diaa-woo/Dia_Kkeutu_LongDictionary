@@ -186,5 +186,4 @@ int main() {
 	char str1 = 0;
 	scanf_s("%c", &str1,sizeof(str1));
 	dictory(str1);
-	
 }
