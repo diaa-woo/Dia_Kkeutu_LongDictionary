@@ -1,57 +1,190 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<iostream>
 #include<string.h>
 
-void storage(int a) {
-	char words[1][1][30] = { "acrylonitrilebutadienestyrene" };
-	char words[1][2][30] = { "antiestablishmentarianism" };
-	char words[1][3][30] = { "alkylbenzenesulfonate" };
-	char words[1][4][30] = { "arenariamelanocephala" };
-	char words[1][5][30] = { "abetalipoproteinemia" };
-	char words[1][6][30] = { "adrenocorticotrophic" };
-	char words[1][7][30] = { "adrenocorticotrophin" };
-	char words[1][8][30] = { "antiestablishmentism" };
-	char words[1][9][30] = { "adrenocorticotropic" };
-	char words[1][10][30] = { "adrenocorticotropin" };
-	char words[1][11][30] = { "auriculoventricular" };
-	char words[1][12][30] = { "adenocarcinomatous" };
-	char words[1][13][30] = { "agammaglobulinemia" };
-	char words[1][14][30] = { "anthropocentricity" };
-	char words[1][15][30] = { "anticholinesterase" };
-	char words[1][16][30] = { "antiferromagnetism" };
-	char words[1][17][30] = { "arteriolosclerosis" };
-	char words[1][18][30] = { "alphaadrenoceptor" };
-	char words[1][19][30] = { "anachronistically" };
-	char words[1][20][30] = { "antiauthoritarian" };
-	char words[1][21][30] = { "antiferromagnetic" };
-	char words[1][22][30] = { "australopithecine" };
-	char words[2][1][30] = { "buckminsterfullerene" };
-	char words[2][2][30] = { "ballistocardiograph" };
-	char words[2][3][30] = { "bicyclebuiltfortwo" };
-	char words[2][4][30] = { "ballistocardiogram" };
-	char words[2][5][30] = { "bosniaherzegovina" };
-	char words[2][6][30] = { "bacillariophyceae" };
-	char words[2][7][30] = { "beggarmyneighbour" };
-	char words[2][8][30] = { "brokenheartedness" };
-	char words[2][9][30] = { "branchiobdellidae" };
-	char words[2][10][30] = { "batrachomyomachia" };
-	char words[2][11][30] = { "beggarmyneighbor" };
-	char words[2][12][30] = { "blaxploitation" };
-	char words[2][13][30] = { "breathlessness" };
-	printf("%s", words[a][2]);
+#define MAX_LENGTH 64
 
+void printWord(int a, int b) {
+	int num = a, line_count = 0;
+	char buffer[MAX_LENGTH];
+	FILE* p_file = NULL;
+
+	if (0 == fopen_s(&p_file, "words.txt", "rt")) {
+		while (fgets(buffer, MAX_LENGTH, p_file) != NULL) {
+			line_count++;
+			if (line_count == num) {
+				printf("%s", buffer);
+				break;
+			}
+		}
+		fclose(p_file);
+	}
 }
 
 void dictory(char str) {
 	switch (str) {
 	case 'a':
-		storage(1);
+		printWord(1, 22);
+		break;
+	case 'b':
+		printWord(23, 35);
+		break;
+	case 'c':
+		printWord(36, 55);
+		break;
+	case 'd':
+		printWord(56,84);
+		break;
+	case 'e':
+		printWord(85, 112);
+		break;
+	case 'f':
+		printWord(113, 123);
+		break;
+	case 'g':
+		printWord(124, 147);
+		break;
+	case 'h':
+		printWord(148, 160);
+		break;
+	case 'i':
+		printWord(161, 167);
+		break;
+	case 'j':
+		printWord(168, 177);
+		break;
+	case 'k':
+		printWord(178, 194);
+		break;
+	case 'l':
+		printWord(195, 227);
+		break;
+	case 'm':
+		printWord(228, 266);
+		break;
+	case 'n':
+		printWord(267, 312);
+		break;
+	case 'o':
+		printWord(313, 342);
+		break;
+	case 'p':
+		printWord(343, 373);
+		break;
+	case 'q':
+		printWord(374, 386);
+		break;
+	case 'r':
+		printWord(387, 424);
+		break;
+	case 's':
+		printWord(425, 448);
+		break;
+	case 't':
+		printWord(449, 478);
+		break;
+	case 'u':
+		printWord(479, 495);
+		break;
+	case 'v':
+		printWord(496, 522);
+		break;
+	case 'w':
+		printWord(523, 550);
+		break;
+	case 'x':
+		printWord(551, 578);
+		break;
+	case 'y':
+		printWord(579, 608);
+		break;
+	case 'z':
+		printWord(609, 634);
+		break;
+	case 'A':
+		printWord(1, 22);
+		break;
+	case 'B':
+		printWord(23, 35);
+		break;
+	case 'C':
+		printWord(36, 55);
+		break;
+	case 'D':
+		printWord(56, 84);
+		break;
+	case 'E':
+		printWord(85, 112);
+		break;
+	case 'F':
+		printWord(113, 123);
+		break;
+	case 'G':
+		printWord(124, 147);
+		break;
+	case 'H':
+		printWord(148, 160);
+		break;
+	case 'I':
+		printWord(161, 167);
+		break;
+	case 'J':
+		printWord(168, 177);
+		break;
+	case 'K':
+		printWord(178, 194);
+		break;
+	case 'L':
+		printWord(195, 227);
+		break;
+	case 'M':
+		printWord(228, 266);
+		break;
+	case 'N':
+		printWord(267, 312);
+		break;
+	case 'O':
+		printWord(313, 342);
+		break;
+	case 'P':
+		printWord(343, 373);
+		break;
+	case 'Q':
+		printWord(374, 386);
+		break;
+	case 'R':
+		printWord(387, 424);
+		break;
+	case 'S':
+		printWord(425, 448);
+		break;
+	case 'T':
+		printWord(449, 478);
+		break;
+	case 'U':
+		printWord(479, 495);
+		break;
+	case 'V':
+		printWord(496, 522);
+		break;
+	case 'W':
+		printWord(523, 550);
+		break;
+	case 'X':
+		printWord(551, 578);
+		break;
+	case 'Y':
+		printWord(579, 608);
+		break;
+	case 'Z':
+		printWord(609, 634);
+		break;
 	}
 }
 
 int main() {
-	char str1;
+	char str1 = 0;
+	scanf_s("%c", &str1,sizeof(str1));
 	dictory(str1);
 	
 }
