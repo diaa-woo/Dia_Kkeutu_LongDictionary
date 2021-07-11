@@ -4,10 +4,14 @@
 
 #define MAX_LENGTH 64
 
+char scanSpell();
+
 void printWord(int a, int b) {
-	int num = a, line_count = 0;
+	int num = 0, line_count = 0;
 	char buffer[MAX_LENGTH];
 	FILE* p_file = NULL;
+
+	num = rand() % (b - a + 1) + a;
 
 	if (0 == fopen_s(&p_file, "words.txt", "rt")) {
 		while (fgets(buffer, MAX_LENGTH, p_file) != NULL) {
@@ -19,6 +23,9 @@ void printWord(int a, int b) {
 		}
 		fclose(p_file);
 	}
+
+	scanSpell();
+	return;
 }
 
 void dictory(char str) {
@@ -182,8 +189,29 @@ void dictory(char str) {
 	}
 }
 
-int main() {
+char scanSpell() {
 	char str1 = 0;
-	scanf_s("%c", &str1,sizeof(str1));
-	dictory(str1);
+	printf("Enter Alpabet: ");
+	scanf_s("%c", &str1, sizeof(str1));
+	if (str1 == '0') {
+		return 0;
+	}
+	else {
+		dictory(str1);
+	}
+	return 0;
+}
+
+void printfirst() {
+	printf("*************************************************\n");
+	printf("Welcome! This is KKeutu Long Dicionary for English\n");
+	printf("It is Loop program. So if you want to exit, Enter 0\n");
+	printf("*************************************************\n");
+	scanSpell();
+	return;
+}
+
+int main() {
+	printfirst();
+	
 }
