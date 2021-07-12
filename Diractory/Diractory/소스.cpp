@@ -4,13 +4,26 @@
 
 #define MAX_LENGTH 64
 
+int i, loop[1000] = { 0, };
+
 void printWord(int a, int b) {
 	int num = 0, line_count = 0;
 	char buffer[MAX_LENGTH];
 	FILE* p_file = NULL;
 
 	num = rand() % (b - a + 1) + a;
+	for (int j = 0; j < i; j++) {
+		if (num == loop[j]) {
+			printWord(a, b);
+			return;
+		}
+	}
 
+	if (i >= (b - a + 1)) {
+		printf("All Words out!");
+		return;
+	}
+	
 	if (0 == fopen_s(&p_file, "words.txt", "rt")) {
 		while (fgets(buffer, MAX_LENGTH, p_file) != NULL) {
 			line_count++;
@@ -21,6 +34,9 @@ void printWord(int a, int b) {
 		}
 		fclose(p_file);
 	}
+		loop[i] = num;
+		i++;
+	
 	return;
 }
 
@@ -211,5 +227,6 @@ void printfirst() {
 
 int main() {
 	printfirst();
+	printf("It's end! Thank you for use this program!");
 	return 0;
 }
