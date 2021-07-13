@@ -4,9 +4,18 @@
 
 #define MAX_LENGTH 64
 
-int i, loop[1000] = { 0, };
+int i, loop[1000] = { 0, }, k;
 
 void printWord(int a, int b) {
+	if (i >= (b - a + 1)) {
+		if (k== a) {
+			printf("All Words out!\n");
+			return;
+		}
+		else {
+			i = 0;
+		}
+	}
 	int num = 0, line_count = 0;
 	char buffer[MAX_LENGTH];
 	FILE* p_file = NULL;
@@ -17,11 +26,6 @@ void printWord(int a, int b) {
 			printWord(a, b);
 			return;
 		}
-	}
-
-	if (i >= (b - a + 1)) {
-		printf("All Words out!");
-		return;
 	}
 	
 	if (0 == fopen_s(&p_file, "words.txt", "rt")) {
@@ -227,6 +231,6 @@ void printfirst() {
 
 int main() {
 	printfirst();
-	printf("It's end! Thank you for use this program!");
+	printf("\nIt's end! Thank you for use this program!\n");
 	return 0;
 }
