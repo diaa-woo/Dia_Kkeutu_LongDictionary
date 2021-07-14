@@ -8,13 +8,9 @@ int i, loop[1000] = { 0, }, k;
 
 void printWord(int a, int b) {
 	if (i >= (b - a + 1)) {
-		if (k== a) {
 			printf("All Words out!\n");
-			return;
-		}
-		else {
 			i = 0;
-		}
+			return;
 	}
 	int num = 0, line_count = 0;
 	char buffer[MAX_LENGTH];
@@ -22,7 +18,7 @@ void printWord(int a, int b) {
 
 	num = rand() % (b - a + 1) + a;
 	for (int j = 0; j < i; j++) {
-		if (num == loop[j]) {
+		if (num == loop[a+j]) {
 			printWord(a, b);
 			return;
 		}
@@ -203,11 +199,13 @@ void dictory(char str) {
 		printWord(609, 634);
 		break;
 	}
+	return;
 }
 
 char scanSpell() {
-	while (1) {
-		char str1 = 0;
+	char str1;
+	 do{
+		rewind(stdin);
 		printf("Enter Alpabet: ");
 		scanf_s("%c", &str1, sizeof(str1));
 		if (str1 == '0') {
@@ -216,7 +214,7 @@ char scanSpell() {
 		else {
 			dictory(str1);
 		}
-	}
+	}while (1);
 	return 0;
 }
 
