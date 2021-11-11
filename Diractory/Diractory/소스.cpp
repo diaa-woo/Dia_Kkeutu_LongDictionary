@@ -42,84 +42,6 @@ void printWord(int a, int b) {
 
 void dictory(char str) {
 	switch (str) {
-	case 'a':
-		printWord(1, 22);
-		break;
-	case 'b':
-		printWord(23, 35);
-		break;
-	case 'c':
-		printWord(36, 55);
-		break;
-	case 'd':
-		printWord(56,84);
-		break;
-	case 'e':
-		printWord(85, 112);
-		break;
-	case 'f':
-		printWord(113, 123);
-		break;
-	case 'g':
-		printWord(124, 147);
-		break;
-	case 'h':
-		printWord(148, 160);
-		break;
-	case 'i':
-		printWord(161, 167);
-		break;
-	case 'j':
-		printWord(168, 177);
-		break;
-	case 'k':
-		printWord(178, 194);
-		break;
-	case 'l':
-		printWord(195, 227);
-		break;
-	case 'm':
-		printWord(228, 266);
-		break;
-	case 'n':
-		printWord(267, 312);
-		break;
-	case 'o':
-		printWord(313, 342);
-		break;
-	case 'p':
-		printWord(343, 373);
-		break;
-	case 'q':
-		printWord(374, 386);
-		break;
-	case 'r':
-		printWord(387, 424);
-		break;
-	case 's':
-		printWord(425, 448);
-		break;
-	case 't':
-		printWord(449, 478);
-		break;
-	case 'u':
-		printWord(479, 495);
-		break;
-	case 'v':
-		printWord(496, 522);
-		break;
-	case 'w':
-		printWord(523, 550);
-		break;
-	case 'x':
-		printWord(551, 578);
-		break;
-	case 'y':
-		printWord(579, 608);
-		break;
-	case 'z':
-		printWord(609, 634);
-		break;
 	case 'A':
 		printWord(1, 22);
 		break;
@@ -212,6 +134,7 @@ char scanSpell() {
 			break;
 		}
 		else {
+			if (str1 >= 'a' && str1 <= 'z') str1 -= 32;
 			dictory(str1);
 		}
 	}while (1);
